@@ -14,7 +14,7 @@
                 );
                 $context  = stream_context_create($options);
                 $result = file_get_contents($url, false, $context);
-                var_dump($content);
+                var_dump($context);
                 die($result);
             } else {
                 die('I don\'t know this command');
