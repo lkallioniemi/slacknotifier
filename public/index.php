@@ -17,7 +17,7 @@
                 $result = file_get_contents($url, false, $context);
                 die($result);
             } else {
-                die('I don\'t know this command'):
+                die('I don\'t know this command');
             }
         } else {
             die('Wrong token');
