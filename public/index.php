@@ -11,7 +11,7 @@
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data, '', '&'));
                 $reply=curl_exec($ch);
                 curl_close($ch);
-                var_dump($reply);
+            //    var_dump($reply);
             } else {
                 die('I don\'t know this command');
             }
