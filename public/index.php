@@ -12,15 +12,10 @@
                         "color": "#FF0000",
                         "pretext": "Optional text that appears above the attachment block",
                         "author_name": "'.$_POST['user_name'].'",
-                        "author_link": "https://frantic.slack.com/team/"'.$_POST['user_name'].',
+                        "author_link": "https://frantic.slack.com/team/'.$_POST['user_name'].'/",
                         "author_icon": "http://flickr.com/icons/bobby.jpg",
                         "title": "Sick leave",
                         "text": "'.$_POST['text'].'",
-                        "fields": [{
-                            "title": "Priority",
-                            "value": "High",
-                            "short": false
-                        }],
                         "image_url": "http://my-website.com/path/to/image.jpg"
                     }]
                 }');
