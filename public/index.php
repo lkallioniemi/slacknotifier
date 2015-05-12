@@ -2,7 +2,28 @@
     if ($_POST['token'] && $_POST['team_id'] && $_POST['team_domain'] && $_POST['channel_id'] && $_POST['channel_name'] && $_POST['user_id'] && $_POST['user_name'] && $_POST['command'] && $_POST['text']){
         if ($_POST['token'] == 'rqvt0PqUB9ayqFwKotL9zgK9'){
             if ($_POST['command'] == "/ooo"){
-                $data = array('payload' => '{"text": "->'.$_POST['user_name']." says ".$_POST['text'].'", "username": "Nurse Jackie", "icon_url": "https://slack.com/img/icons/app-57.png", "icon_emoji": ":hospital:"}');
+                $data = array('payload' => '{
+                    "text": "",
+                    "username": "Nurse Jackie",
+                    "icon_url": "https://slack.com/img/icons/app-57.png",
+                    "icon_emoji": ":hospital:",
+                    "attachments": [{
+                        "fallback": "Required plain-text summary of the attachment.",
+                        "color": "#FF0000",
+                        "pretext": "Optional text that appears above the attachment block",
+                        "author_name": "'.$_POST['user_name'].'",
+                        "author_link": "https://frantic.slack.com/team/"'.$_POST['user_name'].',
+                        "author_icon": "http://flickr.com/icons/bobby.jpg",
+                        "title": "Sick leave",
+                        "text": "'.$_POST['text'].'",
+                        "fields": [{
+                            "title": "Priority",
+                            "value": "High",
+                            "short": false
+                        }],
+                        "image_url": "http://my-website.com/path/to/image.jpg"
+                    }]
+                }');
                 $ch = curl_init();
                 curl_setopt($ch,CURLOPT_URL,"https://hooks.slack.com/services/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");
                 curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
